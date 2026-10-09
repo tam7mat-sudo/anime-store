@@ -2,7 +2,6 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-test một phát cái git pikachu pokemon ryzen 9 9950x 16 core processor
 class Database {
     static $con;
     public static function getConnection() {
