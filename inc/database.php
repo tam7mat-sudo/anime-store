@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
+test một phát cái git
 class Database {
     static $con;
     public static function getConnection() {
