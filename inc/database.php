@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+AMD RỸZEN
 class Database {
     static $con;
     public static function getConnection() {
