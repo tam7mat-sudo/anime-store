@@ -14,7 +14,7 @@ class Database {
     }
 }
 
-// Khai báo lớp Cart chuẩn phong cách thầy giáo
+
 class Cart {
     public $id, $name, $image, $price, $quantity;
     function __construct($id, $name, $image, $price, $quantity){
@@ -26,7 +26,7 @@ class Cart {
     }
 }
 
-// Hàm thêm sản phẩm vào giỏ hàng qua session
+
 function addProductToCart($id_product){
     $q = Database::query("select * from products where id=".$id_product);
     if($q && $r = $q->fetch_array()){
@@ -176,7 +176,7 @@ function _footer() {
 function navbar() {
     if(isset($_GET['id_product'])) {
         addProductToCart($_GET['id_product']);
-        // Chuyển hướng nhẹ nhàng để làm sạch URL, tránh lỗi F5 bị lặp sản phẩm
+       
         header('location: index.php');
         exit();
     }
