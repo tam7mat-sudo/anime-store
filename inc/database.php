@@ -213,7 +213,7 @@ function navbar() {
                 <i class="fa-solid fa-list me-1"></i> Danh Mục Truyện
               </a>
               <ul class="dropdown-menu dropdown-menu-dark border-secondary">';
-                $q = Database::query("select * from categories");
+                $q = Database::query("SELECT * FROM categories ORDER BY id DESC");
                 while ($r = $q->fetch_array()) {
                     $s .= '<li><a class="dropdown-item py-2" href="index.php?id_category='.$r['id'].'">📖 '.$r['name'].'</a></li>';
                 }
@@ -281,12 +281,11 @@ function jumbotron() {
 
 function body() {
     $s = '<div id="manga-list">';
-    
-    if (!isset($_GET['id_category'])) {
-        $q = Database::query("select * from categories");
+   if(!isset($_GET['id_category'])) {
+    $q = Database::query("SELECT * FROM categories ORDER BY id DESC");
     } else {
-        $q = Database::query("select * from categories where id=".intval($_GET['id_category']));
-    }
+    $q = Database::query("SELECT * FROM categories WHERE id=".$_GET['id_category']);
+      }
 
     if ($q) {
         while ($r = $q->fetch_array()) {
